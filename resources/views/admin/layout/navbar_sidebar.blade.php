@@ -24,10 +24,10 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">List Category</a>
+                        <a href="{{ route('category.index') }}">List Category</a>
                     </li>
                     <li>
-                        <a href="#">Add Category</a>
+                        <a href="{{ route('category.create') }}">Add Category</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
