@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function() {
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('page', 'HomeController@homepage')->name('homepage');
+
+Route::get('admin/login', 'Auth\LoginController@showLoginForm');
+Route::post('admin/login', 'Auth\LoginController@login'); 
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::group(['prefix' => 'category'], function() {
         Route::get('index', ['as' => 'category.index', 'uses' => 'CateController@index']);
         Route::get('create', ['as' => 'category.create', 'uses' => 'CateController@create']);

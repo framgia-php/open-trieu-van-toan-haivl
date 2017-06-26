@@ -39,7 +39,7 @@ class ProductController extends Controller
         $product->image = $filename;
         $product->view = 0;
         $product->source = $request->source;
-        $product->user_id = 1;
+        $product->user_id = Auth::user()->id;
         $product->cate_id = $request->category;
         $product->save();
         $image->move('upload/images/image_details/', $filename);
