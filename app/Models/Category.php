@@ -17,5 +17,13 @@ class Category extends Model
     {
         return $this->HasMany(Product::class);
     }
+
+    public static function getCategoryById($id)
+    {
+    	$cate = Category::where('id', $id)->first();
+    	if ($cate)
+            return $cate->id = $id ? $cate->name : null;
+        return "Null";
+    }
 }
 

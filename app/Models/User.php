@@ -50,4 +50,14 @@ class User extends Authenticatable
     {
         return $this->HasMany(ReplyComment::class);
     }
+
+    public static function getUserById($id)
+    {
+        $user = User::where('id', $id)->first();
+        if ($user)
+            return $user->id = $id ? $user->name : null;
+        return "Null";
+    }
 }
+
+

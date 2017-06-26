@@ -32,6 +32,21 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-picture-o fa-fw"></i> Images
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('image.index') }}">List Images</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('image.create') }}">Add Images</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
         </ul>
     </div>
 </div>

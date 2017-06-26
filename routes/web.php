@@ -24,4 +24,14 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('update/{id}', ['as' => 'category.update', 'uses' => 'CateController@update']);
         Route::get('destroy/{id}', ['as' => 'category.destroy', 'uses' => 'CateController@destroy']);
     });
+
+    Route::group(['prefix' => 'image'], function() {
+        Route::get('index', ['as' => 'image.index', 'uses' => 'ProductController@index']);
+        Route::get('create', ['as' => 'image.create', 'uses' => 'ProductController@create']);
+        Route::post('store', ['as' => 'image.store', 'uses' => 'ProductController@store']);
+        Route::get('edit/{id}', ['as' => 'image.edit', 'uses' => 'ProductController@edit']);
+        Route::post('update/{id}', ['as' => 'image.update', 'uses' => 'ProductController@update']);
+        Route::get('destroy/{id}', ['as' => 'image.destroy', 'uses' => 'ProductController@destroy']);
+        Route::get('delimg/{id}', ['as' => 'image.delimg', 'uses' => 'ProductController@delimg']);
+    });
 });
