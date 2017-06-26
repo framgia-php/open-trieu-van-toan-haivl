@@ -45,7 +45,21 @@
                         <a href="{{ route('image.create') }}">Add Images</a>
                     </li>
                 </ul>
-                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-user fa-fw"></i> User
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    
+                    <li>
+                        <a href="{{ route('user.index') }}">List User</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('user.create') }}">Create User</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
