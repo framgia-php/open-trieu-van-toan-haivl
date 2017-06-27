@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
         Route::get('destroy/{id}', ['as' => 'image.destroy', 'uses' => 'ProductController@destroy']);
         Route::get('delimg/{id}', ['as' => 'image.delimg', 'uses' => 'ProductController@delimg']);
     });
-    
+
     Route::group(['prefix' => 'user'], function() {
         Route::get('index', ['as' => 'user.index', 'uses' => 'UserController@index']);
         Route::get('create', ['as' => 'user.create', 'uses' => 'UserController@create']);
@@ -50,5 +50,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
         Route::get('edit/{id}', ['as' => 'user.edit', 'uses' => 'UserController@edit']);
         Route::post('update/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
         Route::get('destroy/{id}', ['as' => 'user.destroy', 'uses' => 'UserController@destroy']);
+    });
+
+     Route::group(['prefix' => 'video'], function() {
+        Route::get('index', ['as' => 'video.index', 'uses' => 'VideoController@index']);
+        Route::get('create', ['as' => 'video.create', 'uses' => 'VideoController@create']);
+        Route::post('store', ['as' => 'video.store', 'uses' => 'VideoController@store']);
+        Route::get('edit/{id}', ['as' => 'video.edit', 'uses' => 'VideoController@edit']);
+        Route::post('update/{id}', ['as' => 'video.update', 'uses' => 'VideoController@update']);
+        Route::get('destroy/{id}', ['as' => 'video.destroy', 'uses' => 'VideoController@destroy']);
     });
 });

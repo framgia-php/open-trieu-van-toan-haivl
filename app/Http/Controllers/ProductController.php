@@ -10,6 +10,7 @@ use App\Models\ProductImage;
 use File;
 use Image;
 use DB;
+use Auth;
 
 class ProductController extends Controller
 {
