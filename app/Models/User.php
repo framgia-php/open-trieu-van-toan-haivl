@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Video;
 use App\Models\Comment;
 use App\Models\ReplyComment;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -58,6 +59,12 @@ class User extends Authenticatable
             return $user->id = $id ? $user->name : null;
         return "Null";
     }
+
+    public static function disabled($id)
+    {
+        if (Auth::user()->id == $id)
+            return "enable";
+
+        return "disabled";
+    }
 }
-
-

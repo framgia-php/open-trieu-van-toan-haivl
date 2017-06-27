@@ -42,4 +42,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
         Route::get('destroy/{id}', ['as' => 'image.destroy', 'uses' => 'ProductController@destroy']);
         Route::get('delimg/{id}', ['as' => 'image.delimg', 'uses' => 'ProductController@delimg']);
     });
+    
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('index', ['as' => 'user.index', 'uses' => 'UserController@index']);
+        Route::get('create', ['as' => 'user.create', 'uses' => 'UserController@create']);
+        Route::post('store', ['as' => 'user.store', 'uses' => 'UserController@store']);
+        Route::get('edit/{id}', ['as' => 'user.edit', 'uses' => 'UserController@edit']);
+        Route::post('update/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
+        Route::get('destroy/{id}', ['as' => 'user.destroy', 'uses' => 'UserController@destroy']);
+    });
 });
