@@ -30,7 +30,6 @@
                         <a href="{{ route('category.create') }}">Add Category</a>
                     </li>
                 </ul>
-                <!-- /.nav-second-level -->
             </li>
             <li>
                 <a href="#">
@@ -43,6 +42,20 @@
                     </li>
                     <li>
                         <a href="{{ route('image.create') }}">Add Images</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>
+                    <i class="fa fa-file-video-o fa-fw"></i> Video
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('video.index') }}">List Video</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('video.create') }}">Add Video</a>
                     </li>
                 </ul>
             </li>
