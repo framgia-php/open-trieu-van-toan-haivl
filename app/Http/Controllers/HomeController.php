@@ -38,6 +38,6 @@ class HomeController extends Controller
 
     public function homepage()
     {
-        return view('home');
+        return view('sites.pages.home');
     }
 }

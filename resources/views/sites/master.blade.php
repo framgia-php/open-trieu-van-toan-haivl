@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vuivui.com</title>
+    <title>Haivl.com</title>
     <link rel="stylesheet" type="text/css" href="/css/reponsive.css" />
     <link rel="stylesheet" href="/css/owl.carousel.css">
     <link rel="stylesheet" href="/css/owl.theme.css">
