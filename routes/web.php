@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('sites.pages.home');
 });
 
 Auth::routes();
@@ -22,6 +22,10 @@ Route::get('page', 'HomeController@homepage')->name('homepage');
 
 Route::get('admin/login', 'Auth\LoginController@showLoginForm');
 Route::post('admin/login', 'Auth\LoginController@login'); 
+
+//login with facebook
+Route::get('facebook/redirect', 'Auth\SocialController@redirectToProvider');
+Route::get('facebook/callback', 'Auth\SocialController@handleProviderCallback');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::group(['prefix' => 'category'], function() {
