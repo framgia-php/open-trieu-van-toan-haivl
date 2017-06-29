@@ -20,10 +20,14 @@ class Category extends Model
 
     public static function getCategoryById($id)
     {
-    	$cate = Category::where('id', $id)->first();
-    	if ($cate)
+        $cate = Category::where('id', $id)->first();
+        if ($cate)
             return $cate->id = $id ? $cate->name : null;
         return "Null";
     }
-}
 
+    public static function getCate($id)
+    {
+        return Category::where('id', $id)->first();
+    }
+}

@@ -11,14 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('sites.pages.home');
-});
+Route::get('/', 'HomeController@homepage');
 
 Auth::routes();
 
+// user
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('page', 'HomeController@homepage')->name('homepage');
+Route::get('category/{alias}', 'HomeController@getcate')->name('category');
+Route::get('detail/{alias}', 'HomeController@detais')->name('detail');
+
+// user post
+Route::get('user-post/{name}', 'HomeController@userpost')->name('userpost');
 
 Route::get('admin/login', 'Auth\LoginController@showLoginForm');
 Route::post('admin/login', 'Auth\LoginController@login'); 
