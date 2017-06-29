@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    $protected $table = 'comments';
+    protected $table = 'comments';
 
-    $protected $fillable = [
+    protected $fillable = [
         'message', 'product_id', 'user_id',
     ];
 
@@ -20,5 +20,12 @@ class Comment extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public static function countProduct($id)
+    {
+        $count = Comment::where('product_id', $id)->count();
+
+        return $count;
     }
 }

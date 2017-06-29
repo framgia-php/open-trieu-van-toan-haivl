@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -13,10 +14,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -38,6 +35,8 @@ class HomeController extends Controller
 
     public function homepage()
     {
-        return view('home');
+        $products = Product::orderBy('id', 'DESC')->get();
+        
+        return view('sites.pages.home', compact('products'));
     }
 }

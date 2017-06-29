@@ -11,17 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@homepage');
 
 Auth::routes();
 
+// user
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('page', 'HomeController@homepage')->name('homepage');
+Route::get('category/{alias}', 'HomeController@getcate')->name('category');
+Route::get('detail/{alias}', 'HomeController@detais')->name('detail');
+
+// user post
+Route::get('user-post/{name}', 'HomeController@userpost')->name('userpost');
 
 Route::get('admin/login', 'Auth\LoginController@showLoginForm');
 Route::post('admin/login', 'Auth\LoginController@login'); 
+
+//login with facebook
+Route::get('facebook/redirect', 'Auth\SocialController@redirectToProvider');
+Route::get('facebook/callback', 'Auth\SocialController@handleProviderCallback');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::group(['prefix' => 'category'], function() {

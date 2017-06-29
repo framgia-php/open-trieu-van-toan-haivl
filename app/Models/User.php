@@ -60,6 +60,11 @@ class User extends Authenticatable
         return "Null";
     }
 
+    public static function getUser($id)
+    {
+        return User::where('id', $id)->first();
+    }
+
     public static function disabled($id)
     {
         if (Auth::user()->id == $id)
